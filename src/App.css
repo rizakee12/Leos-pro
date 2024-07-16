@@ -1,0 +1,141 @@
+/* Root container for consistent layout */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Logo styling */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms, transform 300ms;
+  cursor: pointer;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.7));
+  transform: scale(1.1);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.7));
+}
+
+/* Animation for the logo spin */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card styling for better visual separation */
+.card {
+  padding: 2em;
+  margin: 1.5em 0;
+  background: #ffffff;
+  border: none; /* Remove border */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+  transition: box-shadow 300ms, transform 300ms;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  transform: translateY(-5px);
+}
+
+/* Read the docs link styling */
+.read-the-docs {
+  color: #777;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 300ms;
+}
+
+.read-the-docs:hover {
+  color: #333;
+}
+
+/* Employees table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow effect for the table */
+}
+
+thead {
+  background-color: #dadada;
+}
+
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid transparent; /* Invisible border */
+}
+
+th {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  table, th, td {
+    display: block;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  tbody tr td {
+    text-align: right;
+    position: relative;
+  }
+
+  tbody tr td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    text-align: left;
+    font-weight: bold;
+    color: #777;
+  }
+}
